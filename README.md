@@ -3,15 +3,27 @@
 A small NestJS + TypeScript + PostgreSQL backend demo that manages student records.
 
 Repository structure (simplified):
-- src/app.module.ts
-- src/main.ts
-- src/student/student.module.ts
-- src/student/student.controller.ts
-- src/student/student.service.ts
-- src/student/student.entity.ts
-- src/student/student-status.enum.ts
-- src/student/dto/create-student.dto.ts
-- src/student/dto/update-student-status.dto.ts
+
+```
+nestjs-student-api-postgres/
+├── src/
+│   ├── main.ts # NestJS 应用入口、创建 app、加载全局配置、启动 HTTP 服务器
+│   ├── app.module.ts # DI的根来源, 所有Service, Provider, Repository都会从AppModule这个根模块开始注册，然后通过DI容器自动管理生命周期
+│   ├── student/
+│   │   ├── student.module.ts
+│   │   ├── student.controller.ts
+│   │   ├── student.service.ts
+│   │   ├── student.entity.ts
+│   │   ├── student-status.enum.ts
+│   │   └── dto/
+│   │       ├── create-student.dto.ts
+│   │       └── update-student-status.dto.ts
+│   └── common/
+│       └── index.ts   # 暂时可以空着
+├── .env.example
+├── package.json
+└── ...
+```
 
 Tech stack:
 - NestJS (TypeScript)
