@@ -6,6 +6,7 @@ import {
     UpdateDateColumn,
  } from "typeorm";
 import { StudentStatus } from './enums/student-status.enum';
+import { ResidencyStatus } from "./enums/residency-status.enum";
 
 @Entity()
 export class Student {
@@ -20,6 +21,9 @@ export class Student {
 
     @Column({ type: 'enum', enum: StudentStatus, default: StudentStatus.Active, })
     status!: StudentStatus;
+
+    @Column({ type: 'enum', enum: ResidencyStatus, default: ResidencyStatus.NeedsReview, })
+    residencyStatus!: ResidencyStatus;
 
     @CreateDateColumn()
     createdAt!: Date;
