@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Student } from './student.entity';
 import { CreateStudentDto } from './dto/create-student.dto';
-import { StudentStatus } from './student-status.enum';
+import { StudentStatus } from './enums/student-status.enum';
 
 /**
  * This service encapsulates all business logic related to Student entities,
