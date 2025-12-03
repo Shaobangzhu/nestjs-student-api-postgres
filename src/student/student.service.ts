@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { Student } from './student.entity';
 import { CreateStudentDto } from './dto/create-student.dto';
 import { StudentStatus } from './enums/student-status.enum';
+import { ResidencyStatus } from './enums/residency-status.enum';
 
 /**
  * This service encapsulates all business logic related to Student entities,
@@ -49,6 +50,14 @@ export class StudentService {
     async updateStatus(id: number, status: StudentStatus): Promise<Student> {
         const student = await this.findOne(id);
         student.status = status;
+        return this.studentRepo.save(student);
+    }
+
+    // PATCH /students/:id/residencyStatus
+    // Update student residency status (Resident / Non-resident / Needs Review)
+    async updateResidency(id: number, residency: ResidencyStatus): Promise<Student> {
+        const student = await this.findOne(id);
+        student.residencyStatus = residency;
         return this.studentRepo.save(student);
     }
 
