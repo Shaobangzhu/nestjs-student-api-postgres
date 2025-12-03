@@ -40,3 +40,4 @@ Example endpoints:
 - GET /students/:id
 - POST /students
 - PATCH /students/:id/status
+- PATCH /students/:id/residency
