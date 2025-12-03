@@ -5,8 +5,8 @@ import {
     CreateDateColumn,
     UpdateDateColumn,
  } from "typeorm";
-import { StudentStatus } from './enums/student-status.enum';
-import { ResidencyStatus } from "./enums/residency-status.enum";
+import { StudentStatus } from './enum/student-status.enum';
+import { ResidencyStatus } from "./enum/residency-status.enum";
 
 @Entity()
 export class Student {

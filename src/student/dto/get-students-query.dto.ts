@@ -6,8 +6,8 @@ import {
     Min,
 } from 'class-validator';
 import { Type } from 'class-transformer';
-import { StudentStatus } from '../enums/student-status.enum';
-import { ResidencyStatus } from '../enums/residency-status.enum';
+import { StudentStatus } from '../enum/student-status.enum';
+import { ResidencyStatus } from '../enum/residency-status.enum';
 
 export class GetStudentsQueryDto {
     @IsOptional()
