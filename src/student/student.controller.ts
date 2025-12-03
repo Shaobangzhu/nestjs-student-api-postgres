@@ -15,6 +15,7 @@ import { CreateStudentDto } from './dto/create-student.dto';
 import { UpdateStudentStatusDto } from './dto/update-student-status.dto';
 import { GetStudentsQueryDto } from './dto/get-students-query.dto';
 import { PaginatedStudents } from './interface/paginated-students.interface';
+import { UpdateStudentResidencyDto } from './dto/update-student-residency.dto';
 
 /**
  * Q1: Module + Controller + Service (现在Service换成Repository实现)
@@ -51,6 +52,15 @@ export class StudentController {
         @Body() dto: UpdateStudentStatusDto,
     ): Promise<Student> {
         return this.studentService.updateStatus(id, dto.status);
+    }
+
+    // New Feature: PATCH /students/:id/residency
+    @Patch(':id/residency')
+    updateResidency(
+        @Param('id', ParseIntPipe) id: number,
+        @Body() dto: UpdateStudentResidencyDto,
+    ): Promise<Student> {
+        return this.studentService.updateResidency(id, dto.residency);
     }
 
     // bonus: DELETE /students/:id
