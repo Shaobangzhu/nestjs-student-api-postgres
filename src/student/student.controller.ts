@@ -7,11 +7,14 @@ import {
     Patch,
     Post,
     Delete,
+    Query
 } from '@nestjs/common'
 import { StudentService } from './student.service';
 import { Student } from './student.entity';
 import { CreateStudentDto } from './dto/create-student.dto';
 import { UpdateStudentStatusDto } from './dto/update-student-status.dto';
+import { GetStudentsQueryDto } from './dto/get-students-query.dto';
+import { PaginatedStudents } from './interface/paginated-students.interface';
 
 /**
  * Q1: Module + Controller + Service (现在Service换成Repository实现)
@@ -23,10 +26,10 @@ import { UpdateStudentStatusDto } from './dto/update-student-status.dto';
 export class StudentController {
     constructor(private readonly studentService: StudentService) {}
 
-    // Q1: GET /students
+    // Q1: GET /students?page=&limit=&search=&status=&residency=
     @Get()
-    findAll(): Promise<Student[]> {
-        return this.studentService.findAll();
+    findAll(@Query() query: GetStudentsQueryDto): Promise<PaginatedStudents> {
+        return this.studentService.findAll(query);
     }
 
     // Q1: GET /students/:id
