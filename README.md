@@ -48,3 +48,4 @@ Example endpoints:
 - POST /students
 - PATCH /students/:id/status
 - PATCH /students/:id/residency
+- DELETE /students/:id
