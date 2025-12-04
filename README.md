@@ -15,11 +15,18 @@ nestjs-student-api-postgres/
 │   │   ├── student.service.ts
 │   │   ├── student.entity.ts
 │   │   ├── student-status.enum.ts
-│   │   └── dto/
-│   │       ├── create-student.dto.ts
-│   │       └── update-student-status.dto.ts
+│   │   ├── dto/
+│   │   │    ├── create-student.dto.ts
+│   │   │    ├── get-students-query.dto.ts
+│   │   │    ├── uodate-student-residency.dto.ts
+│   │   │    └── update-student-status.dto.ts
+│   │   ├── interface/
+│   │   │    └── paginated-students.interface.ts
+│   │   └── enum/
+│   │       ├── residency-status.enum.ts
+│   │       └── student-status.enum.ts
 │   └── common/
-│       └── index.ts   # 暂时可以空着
+│       └── index.ts
 ├── .env.example
 ├── package.json
 └── ...
